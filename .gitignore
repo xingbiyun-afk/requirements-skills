@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# 编辑器 / 工具
+.idea/
+.vscode/
+*.swp
+
+# 本地备份（不要把备份放在 skill 根目录，见 README）
+*.disabled-backup
