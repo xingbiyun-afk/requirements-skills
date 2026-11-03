@@ -87,8 +87,9 @@ requirements-skills/
 │       ├── cross-cutting-rules.md     横向规则
 │       ├── projection-and-governance.md  双轨治理
 │       ├── quality-checklist.md       完稿自审
-│       ├── batch-refactor-playbook.md 批量重构
-│       └── legacy-v1-SKILL.md         v1 原文（回溯用）
+│       └── batch-refactor-playbook.md 批量重构
+│   └── archive/
+│       └── v1-skill-20261023.md       v1 原文（回溯用，不加载）
 └── requirements-docs-viewer/
     ├── SKILL.md
     ├── CHANGELOG.md

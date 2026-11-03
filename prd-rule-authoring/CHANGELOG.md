@@ -43,7 +43,7 @@ v2 已覆盖规则正文/阅读层/双轨治理，但在大型项目中，同一
 - **新增投影方法**：从规则正文到阅读层的删/留/压缩规则与缺口清单分类。
 - **新增质量清单与批量手册**：机械检查、可读性抽读、双轨一致性、批量重构阶段与风险。
 - **边界解耦**：页面内阅读入口/查看器/构建/搜索属于独立技能 `requirements-docs-viewer`，本技能不涉及。
-- **v1 内容保留**：原规则正文写作要求整理进 `references/page-rule-spec.md`；v1 SKILL.md 原文保留在 `references/legacy-v1-SKILL.md` 供回溯。
+- **v1 内容保留**：原规则正文写作要求整理进 `references/page-rule-spec.md`；v1 SKILL.md 原文保留在 `archive/v1-skill-20261023.md` 供回溯（不加载）。
 
 ### 兼容性
 

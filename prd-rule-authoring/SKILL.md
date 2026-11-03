@@ -26,6 +26,8 @@ description: 编写或更新产品需求文档（PRD）、主页面规则明细�
 | `references/quality-checklist.md` | 完稿自审与交付前 |
 | `references/batch-refactor-playbook.md` | 一次改造多篇文档时 |
 
+> `archive/` 内为历史原文（如 v1 SKILL），**不加载**，仅供回溯；不要从中取用规则。
+
 ## 0. 边界（先确认不越界）
 
 - 本技能**只产出文档**：不规定页面内阅读入口、查看器、构建复制、搜索的实现；该能力属于独立技能 `requirements-docs-viewer`。
