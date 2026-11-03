@@ -1,7 +1,7 @@
 # 安装说明
 
 > **唯一源 = 本仓库**（`git clone` 到本机的位置）：三个技能的编辑与读取都以仓库为准。
-> **软链**指向本仓库：`~/.codex/skills`、`~/.dsh/skills`、`~/.workbuddy/skills`、`~/.trae-cn/skills`；
+> **软链**指向本仓库：`~/.codex/skills`、`~/.dsh/skills`、`~/.workbuddy/skills`、`~/.trae-cn/skills`、`~/.zcode/skills`；
 > **实体副本**：Kimi 托管目录、DeepSeek Harness 工作区、桌面 skills（原因见 §3.2）。
 > **规则**：所有 AI 工具只读仓库——软链根经软链读仓库，Kimi 等副本根以同步副本为准；任何工具不得直接改副本。
 
@@ -13,11 +13,11 @@ git clone https://github.com/xingbiyun-afk/requirements-skills.git ~/Desktop/req
 
 下文假设仓库位于 `~/Desktop/requirements-skills`；其他位置需同步修改脚本里的 `REPO_ROOT` 行为（脚本已自动取自身所在目录，无需手改）。
 
-## 2. 建立软链（Codex / DSH / WorkBuddy / Trae）
+## 2. 建立软链（Codex / DSH / WorkBuddy / Trae / ZCode）
 
 ```bash
 REPO=~/Desktop/requirements-skills
-for root in ~/.codex/skills ~/.dsh/skills ~/.workbuddy/skills ~/.trae-cn/skills; do
+for root in ~/.codex/skills ~/.dsh/skills ~/.workbuddy/skills ~/.trae-cn/skills ~/.zcode/skills; do
   mkdir -p "$root"
   for s in change-list-authoring prd-rule-authoring requirements-docs-viewer; do
     rm -rf "$root/$s"
@@ -26,7 +26,7 @@ for root in ~/.codex/skills ~/.dsh/skills ~/.workbuddy/skills ~/.trae-cn/skills;
 done
 ```
 
-> 这四个工具都能跟随符号链接（Trae 与 WorkBuddy 的技能目录里本来就有指向 `~/.agents/skills` 的软链）。
+> 这五个工具都能跟随符号链接（Trae 与 WorkBuddy 的技能目录里本来就有指向 `~/.agents/skills` 的软链；ZCode 的 `~/.zcode/skills` 里也全是软链且正常加载）。
 
 ## 3. 同步实体副本根（含 Kimi）
 
@@ -38,6 +38,7 @@ done
 | DSH | `~/.dsh/skills/<skill>` | 软链 → 仓库（DSH 侧已处理） |
 | WorkBuddy | `~/.workbuddy/skills/<skill>` | 软链 → 仓库 |
 | Trae | `~/.trae-cn/skills/<skill>` | 软链 → 仓库 |
+| ZCode | `~/.zcode/skills/<skill>` | 软链 → 仓库 |
 | Kimi（daimon 托管） | `~/Library/Application Support/kimi-desktop/daimon-share/daimon/skills/<skill>` | 实体副本（同步脚本维护） |
 | DeepSeek Harness 工作区 | `~/Documents/deepseek-harness/default-workspace/skills/<skill>` | 实体副本（同步脚本维护） |
 | 桌面 skills | `~/Desktop/代码文件仓库/skills/<skill>` | 实体副本（同步脚本维护） |
@@ -70,7 +71,7 @@ Kimi 的技能目录由 daimon 托管，**daimon 会把技能目录实体化：�
 ## 4. 验证
 
 ```bash
-readlink ~/.codex/skills/prd-rule-authoring ~/.dsh/skills/prd-rule-authoring
+readlink ~/.codex/skills/prd-rule-authoring ~/.dsh/skills/prd-rule-authoring ~/.zcode/skills/prd-rule-authoring
 ./sync-skills-to-all-roots.sh --check
 head -8 ~/.codex/skills/prd-rule-authoring/SKILL.md
 ```

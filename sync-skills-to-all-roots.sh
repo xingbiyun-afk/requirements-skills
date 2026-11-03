@@ -6,7 +6,7 @@
 #
 # 架构（2026-11-02 起）：
 #   唯一编辑源 = 本仓库
-#   软链根：~/.codex/skills、~/.dsh/skills、~/.workbuddy/skills、~/.trae-cn/skills
+#   软链根：~/.codex/skills、~/.dsh/skills、~/.workbuddy/skills、~/.trae-cn/skills、~/.zcode/skills
 #   实体副本根：Kimi 托管目录、DeepSeek Harness 工作区、桌面 skills
 #     —— Kimi 由 daimon 实体化，软链会被还原成目录，只能复制
 set -euo pipefail
@@ -23,6 +23,7 @@ LINK_ROOTS=(
   "$HOME/.dsh/skills:DSH"
   "$HOME/.workbuddy/skills:WorkBuddy"
   "$HOME/.trae-cn/skills:Trae"
+  "$HOME/.zcode/skills:ZCode"
 )
 
 # 实体副本根：这些目录必须放真实文件
