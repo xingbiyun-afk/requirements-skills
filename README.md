@@ -123,9 +123,9 @@ requirements-skills/
 
 各技能独立版本，见各自的 `CHANGELOG.md`：
 
-- `change-list-authoring` v1.1
-- `prd-rule-authoring` v2.1
-- `requirements-docs-viewer` v1.3
+- `change-list-authoring` v1.2
+- `prd-rule-authoring` v2.2
+- `requirements-docs-viewer` v1.4
 
 ## License
 
