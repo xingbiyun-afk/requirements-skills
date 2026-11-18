@@ -13,7 +13,7 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 SRC="$REPO_ROOT"
-SKILLS=(change-list-authoring prd-rule-authoring requirements-docs-viewer)
+SKILLS=(change-list-authoring prd-rule-authoring agents-md-authoring requirements-docs-viewer)
 STAMP="$(date +%Y%m%d-%H%M%S)"
 BACKUP="$HOME/Documents/skill-backups/$STAMP"
 

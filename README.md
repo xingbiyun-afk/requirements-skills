@@ -10,9 +10,10 @@
 |---|---|---|
 | [`change-list-authoring`](change-list-authoring/SKILL.md) | 编写、审查、正式化**可执行变更清单 / CR**：把需求或审查发现落实到任务、代码与文档落点、边界与验收。支持单仓与多仓。 | 「写变更清单」「审查这个 CR」「/cr」 |
 | [`prd-rule-authoring`](prd-rule-authoring/SKILL.md) | 编写或更新 **PRD / 主页面规则明细 / 产品需求说明书（阅读层）**：先选文种与读者，再按完整性要求写作；横向规则建唯一权威与消费方矩阵；处理双轨维护、未定事项与证据。 | 「写 PRD」「补页面规则」「整理需求说明书」 |
+| [`agents-md-authoring`](agents-md-authoring/SKILL.md) | 编写或整理**项目的 AI 入口文档（AGENTS.md / CLAUDE.md）**：定 6 段骨架、写清接手信息，把状态流水账和业务规则挡在外面。 | 「写 AGENTS.md」「整理项目入口文档」 |
 | [`requirements-docs-viewer`](requirements-docs-viewer/SKILL.md) | 在应用内提供**需求文档阅读入口 / 查看器**：文档映射、构建期复制、目录与搜索、历史章节过滤、懒加载、生产暴露面处置。 | 「页面里加个需求文档入口」「文档抽屉」 |
 
-## 三者边界
+## 四者边界
 
 职责严格分工，**互不越界**：
 
@@ -24,6 +25,8 @@ prd-rule-authoring          文档内容怎么写（规则正文 / 阅读层）
 requirements-docs-viewer    文档怎么在页面里被读到（入口实现）
 
 change-list-authoring       一次改动怎么被拆成可执行、可验收的任务
+
+agents-md-authoring         项目入口文档写什么、以及什么不该写在这里
 ```
 
 - `requirements-docs-viewer` 与两个写作技能**互不依赖**：没有阅读入口的项目也要产出需求文档；有阅读入口也不改变写作规则。
@@ -43,6 +46,7 @@ git clone https://github.com/xingbiyun-afk/requirements-skills.git ~/requirement
 mkdir -p ~/.codex/skills
 ln -sfn ~/requirements-skills/change-list-authoring        ~/.codex/skills/change-list-authoring
 ln -sfn ~/requirements-skills/prd-rule-authoring           ~/.codex/skills/prd-rule-authoring
+ln -sfn ~/requirements-skills/agents-md-authoring          ~/.codex/skills/agents-md-authoring
 ln -sfn ~/requirements-skills/requirements-docs-viewer     ~/.codex/skills/requirements-docs-viewer
 
 # Claude Code

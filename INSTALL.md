@@ -1,6 +1,6 @@
 # 安装说明
 
-> **唯一源 = 本仓库**（`git clone` 到本机的位置）：三个技能的编辑与读取都以仓库为准。
+> **唯一源 = 本仓库**（`git clone` 到本机的位置）：所有技能的编辑与读取都以仓库为准。
 > **软链**指向本仓库：`~/.codex/skills`、`~/.dsh/skills`、`~/.workbuddy/skills`、`~/.trae-cn/skills`、`~/.zcode/skills`；
 > **实体副本**：Kimi 托管目录、DeepSeek Harness 工作区、桌面 skills（原因见 §3.2）。
 > **规则**：所有 AI 工具只读仓库——软链根经软链读仓库，Kimi 等副本根以同步副本为准；任何工具不得直接改副本。
@@ -19,7 +19,7 @@ git clone https://github.com/xingbiyun-afk/requirements-skills.git ~/Desktop/req
 REPO=~/Desktop/requirements-skills
 for root in ~/.codex/skills ~/.dsh/skills ~/.workbuddy/skills ~/.trae-cn/skills ~/.zcode/skills; do
   mkdir -p "$root"
-  for s in change-list-authoring prd-rule-authoring requirements-docs-viewer; do
+  for s in change-list-authoring prd-rule-authoring agents-md-authoring requirements-docs-viewer; do
     rm -rf "$root/$s"
     ln -s "$REPO/$s" "$root/$s"
   done
@@ -43,7 +43,7 @@ done
 | DeepSeek Harness 工作区 | `~/Documents/deepseek-harness/default-workspace/skills/<skill>` | 实体副本（同步脚本维护） |
 | 桌面 skills | `~/Desktop/代码文件仓库/skills/<skill>` | 实体副本（同步脚本维护） |
 
-规则：**三个技能的唯一编辑源/读取源都是本仓库**。软链根的工具经软链读到仓库；Kimi 与实体副本根经同步副本读到仓库内容。任何工具不得把本地副本当作编辑源，也不得绕过仓库改副本。
+规则：**所有技能的唯一编辑源/读取源都是本仓库**。软链根的工具经软链读到仓库；Kimi 与实体副本根经同步副本读到仓库内容。任何工具不得把本地副本当作编辑源，也不得绕过仓库改副本。
 
 ### 3.2 Kimi 为什么必须实体副本（单独说明）
 
@@ -59,7 +59,7 @@ Kimi 的技能目录由 daimon 托管，**daimon 会把技能目录实体化：�
 
 - **不要直接编辑 Kimi 托管副本**——下次同步会被仓库内容覆盖，且副本与仓库漂移后 `--check` 会报「不同」；
 - 发现 Kimi 副本与仓库不一致时，不要手工改副本，回到仓库核对后跑同步脚本；
-- 其他 AI 工具同理：三个技能只读仓库（软链根跟随软链，Kimi 等副本根以同步副本为准），不各自维护版本。
+- 其他 AI 工具同理：所有技能只读仓库（软链根跟随软链，Kimi 等副本根以同步副本为准），不各自维护版本。
 
 ### 3.3 同步命令
 
@@ -90,4 +90,4 @@ cp -a ~/Documents/skill-backups/<STAMP>/<skill> ~/.codex/skills/<skill>
 - **只在本仓库编辑**，不要直接改 Codex/DSH/Kimi 副本，避免多份漂移；
 - 改完提交并推送后，跑一次 `./sync-skills-to-all-roots.sh` 让副本跟上；
 - **不要把备份目录放进任何技能根目录**：发现器会把 `<dir>/SKILL.md` 当成正式技能，与正式版同名时会抢过正式版；
-- 三个技能互相解耦，可分别安装。
+- 各技能互相解耦，可分别安装。
